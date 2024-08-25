@@ -1,11 +1,24 @@
 "use client";
 import React from "react";
 import { SparklesCore } from "../ui/sparkles";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 export function SparklesPreview() {
-    const handleButtonClick = () => {
-        alert('Currently this is for demo');
-    }
+    const handleClick = () => {
+        toast.success("This is for demo!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+    };
+
     return (
         <div className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
             <div className="w-full absolute inset-0 h-screen">
@@ -19,6 +32,7 @@ export function SparklesPreview() {
                     particleColor="#FFFFFF"
                 />
             </div>
+            <ToastContainer />
             <div className="mb-4 z-10">
                 <label className="block text-gray-700 text-sm font-bold mb-2" >
                     Message
@@ -27,7 +41,7 @@ export function SparklesPreview() {
 
 
             </div>
-            <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block" onClick={handleButtonClick}>
+            <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block" onClick={handleClick}>
                 <span className="absolute inset-0 overflow-hidden rounded-full">
                     <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </span>
