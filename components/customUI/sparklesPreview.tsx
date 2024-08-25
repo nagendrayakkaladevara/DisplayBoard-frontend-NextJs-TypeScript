@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export function SparklesPreview() {
     const handleClick = () => {
-        toast.success("This is for demo!", {
+        toast.success("Currently this is for demo!", {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
